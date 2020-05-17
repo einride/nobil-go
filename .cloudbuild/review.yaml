@@ -1,0 +1,15 @@
+steps:
+  - name: gcr.io/einride/cloud-builder
+    entrypoint: /gcb-setup/run.sh
+    volumes:
+      - name: ssh
+        path: /root/.ssh
+    env:
+      - REPO_NAME=$REPO_NAME
+      - COMMIT_SHA=$COMMIT_SHA
+
+  - name: gcr.io/einride/cloud-builder
+    entrypoint: make
+    volumes:
+      - name: ssh
+        path: /root/.ssh
