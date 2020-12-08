@@ -14,10 +14,6 @@ clean:
 include tools/commitlint/rules.mk
 include tools/golangci-lint/rules.mk
 
-.PHONY: go-lint
-go-lint: $(golangci_lint)
-	GOGC=1 GOMAXPROCS=1 $(golangci_lint) run --timeout 5m
-
 .PHONY: go-test
 go-test:
 	go test -race ./...
