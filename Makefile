@@ -2,6 +2,7 @@ SHELL := /bin/bash
 
 .PHONY: all
 all: \
+	commitlint \
 	go-lint \
 	go-test \
 	go-mod-tidy \
@@ -10,6 +11,7 @@ all: \
 clean:
 	rm -rf tools/*/*/
 
+include tools/commitlint/rules.mk
 include tools/golangci-lint/rules.mk
 
 .PHONY: go-lint
