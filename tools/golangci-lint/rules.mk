@@ -11,7 +11,7 @@ $(error unsupported OS: $(shell uname))
 endif
 
 $(golangci_lint):
-	$(info building golangci-lint...)
+	$(info [golangci-lint] fetching version $(golangci_lint) binary...)
 	@mkdir -p $(dir $@)
 	@curl -sSL $(golangci_lint_archive_url) -o - | \
 		tar -xz --directory $(dir $@) --strip-components 1
@@ -20,5 +20,5 @@ $(golangci_lint):
 
 .PHONY: go-lint
 go-lint: $(golangci_lint)
-	$(info linting Go code with golangci-lint...)
+	$(info [$@] linting Go code...)
 	@$(golangci_lint) run
