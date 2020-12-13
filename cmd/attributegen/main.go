@@ -7,7 +7,7 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/einride/nobil-go/cmd/attributegen/internal/attributegen"
+	"go.einride.tech/nobil/cmd/attributegen/internal/attributegen"
 )
 
 func main() {

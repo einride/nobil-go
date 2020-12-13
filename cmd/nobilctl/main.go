@@ -10,7 +10,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/einride/nobil-go"
+	"go.einride.tech/nobil"
 )
 
 func main() {

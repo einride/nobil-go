@@ -1,4 +1,4 @@
-module github.com/einride/nobil-go/cmd/attributegen
+module go.einride.tech/nobil/cmd/attributegen
 
 go 1.14
 

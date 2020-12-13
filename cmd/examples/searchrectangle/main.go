@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/einride/nobil-go"
+	"go.einride.tech/nobil"
 )
 
 func main() {

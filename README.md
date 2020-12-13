@@ -22,27 +22,32 @@ $ go get -u go.einride.tech/nobil
 
 ### Search charging stations in a rectangle
 
+```bash
+$ NOBIL_API_KEY=YOUR_API_KEY go run go.einride.tech/cmd/examples/searchrectangle
+```
+
 ```go
 package main
 
 import (
 	"context"
 	"fmt"
+	"os"
 
-	"github.com/einride/nobil-go"
+	"go.einride.tech/nobil"
 )
 
 func main() {
 	ctx := context.Background()
-	client := nobil.NewClient("YOUR_API_KEY_HERE")
+	client := nobil.NewClient(os.Getenv("NOBIL_API_KEY"))
 	response, err := client.SearchRectangle(ctx, &nobil.SearchRectangleRequest{
 		NorthEast: nobil.LatLng{
-			Latitude:  59.943921193288915,
-			Longitude: 10.826683044433594,
+			Latitude:  59.94392,
+			Longitude: 10.82668,
 		},
 		SouthWest: nobil.LatLng{
-			Latitude:  59.883683240905256,
-			Longitude: 10.650901794433594,
+			Latitude:  59.88368,
+			Longitude: 10.65090,
 		},
 		ExistingIDs: []string{"189", "195", "199", "89", "48"},
 	})
@@ -57,13 +62,17 @@ func main() {
 
 ### Search nearby charging stations
 
+```bash
+$ NOBIL_API_KEY=YOUR_API_KEY go run go.einride.tech/cmd/examples/searchnear
+```
+
 ```go
 import (
 	"context"
 	"fmt"
 	"os"
 
-	"github.com/einride/nobil-go"
+	"go.einride.tech/nobil"
 )
 
 func main() {
