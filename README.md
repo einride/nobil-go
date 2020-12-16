@@ -1,8 +1,8 @@
-# NOBIL-Go
+# NOBIL Go
 
-Go client to the [NOBIL API][nobil-api] for location and metadata about
-charging stations in Scandinavia.
+Go client to the [NOBIL.no][nobil-no] public charger [API][nobil-api].
 
+[nobil-no]: https://info.nobil.no
 [nobil-api]: https://info.nobil.no/api
 
 ## Usage
