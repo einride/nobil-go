@@ -10,10 +10,6 @@ all: \
 	go-mod-tidy \
 	git-verify-nodiff
 
-.PHONY: clean
-clean:
-	rm -rf tools/*/*/
-
 include tools/commitlint/rules.mk
 include tools/git-verify-nodiff/rules.mk
 include tools/golangci-lint/rules.mk
@@ -21,10 +17,17 @@ include tools/goreview/rules.mk
 include tools/prettier/rules.mk
 include tools/semantic-release/rules.mk
 
+.PHONY: clean
+clean:
+	$(info [$@] removing build files...)
+	@rm -rf tools/*/*/
+	@rm -rf build
+
 .PHONY: go-test
 go-test:
 	$(info [$@] running Go tests...)
-	@go test -cover -race ./...
+	@mkdir -p build/coverage
+	@go test -short -race -coverprofile=build/coverage/$@.txt -covermode=atomic ./...
 
 .PHONY: go-mod-tidy
 go-mod-tidy:

@@ -2,3 +2,4 @@
 tools/*/*/
 tools/*/go.sum
 node_modules/
+build/
