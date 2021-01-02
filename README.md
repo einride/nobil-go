@@ -1,5 +1,16 @@
 # NOBIL Go
 
+[![PkgGoDev][pkg-badge]][pkg]
+[![GoReportCard][report-badge]][report]
+[![Codecov][codecov-badge]][codecov]
+
+[pkg-badge]: https://pkg.go.dev/badge/go.einride.tech/nobil
+[pkg]: https://pkg.go.dev/go.einride.tech/nobil
+[report-badge]: https://goreportcard.com/badge/go.einride.tech/nobil
+[report]: https://goreportcard.com/report/go.einride.tech/nobil
+[codecov-badge]: https://codecov.io/gh/einride/nobil-go/branch/master/graph/badge.svg
+[codecov]: https://codecov.io/gh/einride/nobil-go
+
 Go client to the [NOBIL.no][nobil-no] public charger [API][nobil-api].
 
 [nobil-no]: https://info.nobil.no
